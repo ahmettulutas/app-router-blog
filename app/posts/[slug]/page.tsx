@@ -1,9 +1,8 @@
-import Image from "next/image";
 /* https://randomuser.me/api/ */
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${params.id}`
+    `https://jsonplaceholder.typicode.com/posts/${params.slug}`
   );
   const data: { id: string; title: string } = await res.json();
   return (
