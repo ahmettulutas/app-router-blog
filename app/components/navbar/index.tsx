@@ -4,6 +4,7 @@ import { UserCircle2Icon } from "lucide-react";
 import NavbarLinks from "./menu-links";
 import Logo from "../logo";
 import { getMenuLinks } from "@/actions/get-menu-items";
+import DarkModeToggle from "./dark-mode-toggle";
 
 export default async function Navbar() {
   const menuLinks = await getMenuLinks();
@@ -15,7 +16,7 @@ export default async function Navbar() {
     >
       <Logo />
       <NavbarLinks menuItems={menuLinks} />
-      <UserCircle2Icon />
+      <DarkModeToggle />
     </nav>
   );
 }
